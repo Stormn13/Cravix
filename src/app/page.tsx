@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { toast } from "sonner";
 import { Dumbbell, Save, RefreshCw, ChefHat, ShoppingCart, Activity, History } from "lucide-react";
 
 export default function Home() {
@@ -92,6 +93,9 @@ export default function Home() {
       createdAt: Date.now(),
     };
     saveRecipe(newSaved);
+    toast.success("Recipe saved successfully!", {
+      description: `Your upgraded version of ${dish} is now in your saved recipes.`,
+    });
   };
 
   const loadSavedRecipe = (saved: SavedRecipe) => {
