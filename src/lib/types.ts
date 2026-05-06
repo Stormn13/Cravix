@@ -6,6 +6,7 @@ export interface Controls {
     healthiness: number;
     convenience: number;
   };
+  isMock?: boolean;
 }
 
 export interface OptimizedRecipe {
@@ -21,6 +22,7 @@ export interface OptimizedRecipe {
     [key: string]: string | undefined;
   };
   explanation?: string;
+  isMock?: boolean;
 }
 
 export interface SavedRecipe {

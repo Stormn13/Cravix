@@ -197,6 +197,11 @@ export default function Home() {
                 Optimizing: <span className="text-primary capitalize">{dish}</span>
               </CardTitle>
               <CardDescription>Select your priorities to build your perfect version.</CardDescription>
+              {controls.isMock && (
+                <div className="bg-orange-500/10 text-orange-500 border border-orange-500/50 p-3 rounded-md text-sm mt-4">
+                  Using mock data because the API limits were reached.
+                </div>
+              )}
             </CardHeader>
             <CardContent className="space-y-8">
               
@@ -299,6 +304,11 @@ export default function Home() {
                       Upgraded from {dish}
                     </CardDescription>
                     <CardTitle className="text-3xl font-black">{recipe.title}</CardTitle>
+                    {recipe.isMock && (
+                      <div className="bg-orange-500/10 text-orange-500 border border-orange-500/50 p-2 mt-2 rounded-md text-xs font-medium inline-block">
+                        Mock Data Mode
+                      </div>
+                    )}
                   </div>
                   <div className="flex gap-2">
                     <Button variant="outline" size="icon" onClick={handleSaveRecipe}>
