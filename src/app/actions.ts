@@ -36,7 +36,7 @@ Avoid medical language.
 Dish: ${dish}`;
 
   const response = await withRetry(() => ai.models.generateContent({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.0-flash",
     contents: prompt,
     config: {
       responseMimeType: "application/json",
@@ -125,7 +125,7 @@ The response should feel realistic and practical.
 Avoid extreme dieting advice.`;
 
   const response = await withRetry(() => ai.models.generateContent({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.0-flash",
     contents: prompt,
     config: {
       responseMimeType: "application/json",
